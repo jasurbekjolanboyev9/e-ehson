@@ -1,3 +1,4 @@
+import 'dart:async'; // runZonedGuarded uchun kerak
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,13 +8,24 @@ import 'services/localization_service.dart';
 import 'services/api_service.dart';
 import 'bindings/initial_bindings.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // API yoki boshqa servislarni boshlash
-  await ApiService.init();
+  // Global xatoliklarni ushlash uchun zonada ishga tushirish
+  runZonedGuarded(() async {
+    await ApiService.init();
 
-  runApp(const EEhsonApp());
+    runApp(const EEhsonApp());
+  }, (error, stackTrace) {
+    debugPrint('Global error: $error');
+    debugPrintStack(stackTrace: stackTrace);
+  });
+
+  // Flutter framework xatoliklari uchun qo‘shimcha tutuvchi
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    debugPrint('Flutter framework error: ${details.exception}');
+  };
 }
 
 class EEhsonApp extends StatelessWidget {
@@ -24,13 +36,15 @@ class EEhsonApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'e-Ehson',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.light, // theme.dart
-      translations: LocalizationService(), // services/localization_service.dart
+      theme: AppTheme.light, // Material 3 asosidagi tema
+      translations: LocalizationService(), // Lokalizatsiya xizmati
       locale: LocalizationService.locale,
       fallbackLocale: LocalizationService.fallbackLocale,
-      initialBinding: InitialBindings(), // bindings/initial_bindings.dart
-      initialRoute: Routes.SPLASH, // routes.dart
-      getPages: AppPages.pages, // routes.dart ichidagi sahifalar
+      initialBinding: InitialBindings(), // GetX Bindinglari
+      initialRoute: Routes.SPLASH, // Dastlabki sahifa
+      getPages: AppPages.pages, // Marshrutlar ro‘yxati
+      defaultTransition: Transition.fade,
+      transitionDuration: const Duration(milliseconds: 300),
     );
   }
 }

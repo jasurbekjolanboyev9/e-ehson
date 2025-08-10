@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
+import 'profile/profile_page.dart'; // Loyihangizga mos yo‘lni yozing
+
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
@@ -11,29 +13,36 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.home, size: 80, color: Colors.orange),
-          SizedBox(height: 16),
-          Text("Welcome to Bottom Navigation Bar",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
-        ],
+  late final List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.home, size: 80, color: Colors.orange),
+            SizedBox(height: 16),
+            Text("Welcome to Bottom Navigation Bar",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+          ],
+        ),
       ),
-    ),
-    const Center(child: Text("Chat Page", style: TextStyle(fontSize: 20))),
-    const Center(child: Text("Notifications", style: TextStyle(fontSize: 20))),
-    const Center(child: Text("Profile Page", style: TextStyle(fontSize: 20))),
-  ];
+      const Center(child: Text("Chat Page", style: TextStyle(fontSize: 20))),
+      const Center(
+          child: Text("Notifications", style: TextStyle(fontSize: 20))),
+      const ProfilePage(), // const qo‘shdim, agar ProfilePage const bo‘lsa
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: ConvexAppBar(
-        style: TabStyle.fixedCircle,
+        style: TabStyle.reactCircle, // fixedCircle o‘rniga reactCircle
         backgroundColor: Colors.white,
         activeColor: Colors.orange,
         color: Colors.black54,
@@ -43,7 +52,7 @@ class _DashboardPageState extends State<DashboardPage> {
           TabItem(icon: Icons.notifications_none, title: 'Alerts'),
           TabItem(icon: Icons.person_outline, title: 'Profile'),
         ],
-        initialActiveIndex: 0,
+        initialActiveIndex: _selectedIndex,
         onTap: (int index) {
           setState(() {
             _selectedIndex = index;
