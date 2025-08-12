@@ -81,16 +81,39 @@ class AdminBinding extends Bindings {
 class AppPages {
   static final pages = [
     GetPage(name: Routes.SPLASH, page: () => SplashPage()),
-    GetPage(name: Routes.LOGIN, page: () => LoginPage(), binding: AuthBinding()),
-    GetPage(name: Routes.REGISTER, page: () => RegisterPage(), binding: AuthBinding()),
-    GetPage(name: Routes.RESET, page: () => ResetPasswordPage(), binding: AuthBinding()),
+    GetPage(
+        name: Routes.LOGIN, page: () => LoginPage(), binding: AuthBinding()),
+    GetPage(
+        name: Routes.REGISTER,
+        page: () => RegisterPage(),
+        binding: AuthBinding()),
+    GetPage(
+        name: Routes.RESET,
+        page: () => ResetPasswordPage(),
+        binding: AuthBinding()),
     GetPage(name: Routes.DASHBOARD, page: () => DashboardPage()),
-    GetPage(name: Routes.DONATE, page: () => DonatePage(), binding: DonationBinding()),
-    GetPage(name: Routes.REQUEST, page: () => RequestAidPage(), binding: DonationBinding()),
-    GetPage(name: Routes.CAMPAIGNS, page: () => CampaignsPage(), binding: CampaignBinding()),
-    GetPage(name: Routes.CAMPAIGN_DETAIL, page: () => CampaignDetailPage(), binding: CampaignBinding()),
-    GetPage(name: Routes.PROFILE, page: () => ProfilePage(), binding: ProfileBinding()),
-    GetPage(name: Routes.ADMIN, page: () => AdminPage(), binding: AdminBinding()),
+    GetPage(
+        name: Routes.DONATE,
+        page: () => DonatePage(),
+        binding: DonationBinding()),
+    GetPage(
+        name: Routes.REQUEST,
+        page: () => RequestAidPage(),
+        binding: DonationBinding()),
+    GetPage(
+        name: Routes.CAMPAIGNS,
+        page: () => CampaignsPage(),
+        binding: CampaignBinding()),
+    GetPage(
+        name: Routes.CAMPAIGN_DETAIL,
+        page: () => CampaignDetailPage(),
+        binding: CampaignBinding()),
+    GetPage(
+        name: Routes.PROFILE,
+        page: () => ProfilePage(),
+        binding: ProfileBinding()),
+    GetPage(
+        name: Routes.ADMIN, page: () => AdminPage(), binding: AdminBinding()),
     GetPage(name: Routes.STATISTICS, page: () => StatisticsPage()),
     GetPage(name: Routes.HELP, page: () => HelpPage()),
     GetPage(name: Routes.LANGUAGE, page: () => LanguagePage()),

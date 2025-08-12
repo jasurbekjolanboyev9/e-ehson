@@ -25,15 +25,17 @@ class _DashboardPageState extends State<DashboardPage> {
           children: [
             Icon(Icons.home, size: 80, color: Colors.orange),
             SizedBox(height: 16),
-            Text("Welcome to Bottom Navigation Bar",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+            Text(
+              "Welcome to Bottom Navigation Bar",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            )
           ],
         ),
       ),
       const Center(child: Text("Chat Page", style: TextStyle(fontSize: 20))),
       const Center(
           child: Text("Notifications", style: TextStyle(fontSize: 20))),
-      const ProfilePage(), // const qo‘shdim, agar ProfilePage const bo‘lsa
+      ProfilePage(), // const olib tashlandi, chunki ProfilePage const emas
     ];
   }
 
@@ -42,7 +44,7 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: ConvexAppBar(
-        style: TabStyle.reactCircle, // fixedCircle o‘rniga reactCircle
+        style: TabStyle.reactCircle,
         backgroundColor: Colors.white,
         activeColor: Colors.orange,
         color: Colors.black54,
