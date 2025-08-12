@@ -1,7 +1,10 @@
+// lib/pages/dashboard_page.dart
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
-import 'profile/profile_page.dart'; // Loyihangizga mos yo‘lni yozing
+import 'package:e_ehson/pages/home/home_page.dart'; // HomePage uchun import
+import 'package:e_ehson/modules/chat/views/chat_screen.dart'; // ChatScreen uchun import
+import 'package:e_ehson/pages/profile/profile_page.dart'; // ProfilePage uchun import
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -19,23 +22,12 @@ class _DashboardPageState extends State<DashboardPage> {
   void initState() {
     super.initState();
     _pages = [
+      const HomePage(),
+      const ChatScreen(),
       const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.home, size: 80, color: Colors.orange),
-            SizedBox(height: 16),
-            Text(
-              "Welcome to Bottom Navigation Bar",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
+        child: Text("Notifications", style: TextStyle(fontSize: 20)),
       ),
-      const Center(child: Text("Chat Page", style: TextStyle(fontSize: 20))),
-      const Center(
-          child: Text("Notifications", style: TextStyle(fontSize: 20))),
-      ProfilePage(), // const olib tashlandi, chunki ProfilePage const emas
+      ProfilePage(),
     ];
   }
 

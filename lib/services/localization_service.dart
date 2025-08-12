@@ -77,6 +77,11 @@ class LocalizationService extends Translations {
           'Profilingiz do‘stlaringizga ulashildi':
               'Profilingiz do‘stlaringizga ulashildi',
           'Ehson qo‘shildi': 'Ehson qo‘shildi',
+          'Xabar yozing...': 'Xabar yozing...',
+          'Salom, qanday yordam bera olaman?':
+              'Salom, qanday yordam bera olaman?',
+          'Bizga oziq-ovqat kerak.': 'Bizga oziq-ovqat kerak.',
+          'Rahmat, juda yaxshi bo‘lardi!': 'Rahmat, juda yaxshi bo‘lardi!',
         },
         'ru_RU': {
           // Add Russian translations as needed
