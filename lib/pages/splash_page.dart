@@ -8,38 +8,63 @@ class SplashPage extends StatefulWidget {
   State<StatefulWidget> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPageState extends State<SplashPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
   @override
   void initState() {
     super.initState();
-    // 800ms keyin login sahifasiga o‘tish
-    Timer(Duration(milliseconds: 2000), () => Get.offNamed(Routes.LOGIN));
+
+    // 2 soniyadan keyin login sahifasiga o‘tish
+    Timer(Duration(seconds: 2), () => Get.offNamed(Routes.LOGIN));
+
+    // Animatsiya controller va animation
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    )..repeat(reverse: true);
+
+    _animation = Tween<double>(begin: 0.5, end: 1.0).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // FlutterLogo o‘rniga o‘z rasm logoni ishlatamiz
-            Image.asset(
-              'assets/images/app_icon.png', // Splash rasm yo‘li
-              width: 200,
-              height: 200,
-            ),
-            SizedBox(height: 12),
-            Text(
-              'e-Ehson',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            SizedBox(height: 6),
-            Text(
-              'Shaffof va ishonchli ehson platformasi',
-              textAlign: TextAlign.center,
-            ),
-          ],
+        child: FadeTransition(
+          opacity: _animation,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'e-Ehson',
+                style: TextStyle(
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
+              ),
+              SizedBox(height: 12),
+              Text(
+                'Shaffof va ishonchli ehson platformasi',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

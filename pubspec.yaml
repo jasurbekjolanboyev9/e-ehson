@@ -26,8 +26,6 @@ dependencies:
   flutter_slidable: ^0.6.0
   url_launcher: ^6.1.7 
   provider: ^6.0.5
-  flutter_native_splash: ^2.4.0
-  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -36,11 +34,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/app_icon.png
 
-# App icon sozlamasi
+# Splash sozlamasi – rasm ishlatilmaydi, shuning uchun olib tashladik
+# Agar rasm ishlatadigan bo'lsang, quyidagi sozlamani qo'yishing mumkin:
+# flutter_native_splash:
+#   color: "#ffffff"
+#   image: assets/images/app_icon.png
+#   android: true
+
+# App icon sozlamasi – faqat Android uchun
 flutter_launcher_icons:
   image_path: "assets/images/app_icon.png"
   android: true
-  ios: true
