@@ -82,6 +82,45 @@ class LocalizationService extends Translations {
               'Salom, qanday yordam bera olaman?',
           'Bizga oziq-ovqat kerak.': 'Bizga oziq-ovqat kerak.',
           'Rahmat, juda yaxshi bo‘lardi!': 'Rahmat, juda yaxshi bo‘lardi!',
+          // lib/services/localization_service.dart (add to 'uz_UZ')
+          'Assalomu alaykum, Jasurbek!': 'Assalomu alaykum, Jasurbek!',
+          'Bosh sahifa': 'Bosh sahifa',
+          'Ehson qilish': 'Ehson qilish',
+          'Talab qo‘yish': 'Talab qo‘yish',
+          'Kampaniyalar': 'Kampaniyalar',
+          'Profil': 'Profil',
+          'Statistika': 'Statistika',
+          'Yordam': 'Yordam',
+          'Top kampaniyalar': 'Top kampaniyalar',
+          'Yozgi yordam kampaniyasi': 'Yozgi yordam kampaniyasi',
+          'Qashshoq oilalarga yordam berish uchun kampaniya.':
+              'Qashshoq oilalarga yordam berish uchun kampaniya.',
+          'Qishki kiyimlar': 'Qishki kiyimlar',
+          'Qishki kiyimlarni ehtiyojmandlarga tarqatamiz.':
+              'Qishki kiyimlarni ehtiyojmandlarga tarqatamiz.',
+          'Ta\'lim uchun ehson': 'Ta\'lim uchun ehson',
+          'Bolalarga ta\'lim imkoniyati yaratish maqsadida.':
+              'Bolalarga ta\'lim imkoniyati yaratish maqsadida.',
+          '% to‘landi': '% to‘landi',
+          'Foydali videolar': 'Foydali videolar',
+          'Video ochilmadi': 'Video ochilmadi',
+          'Tezkor harakatlar': 'Tezkor harakatlar',
+          'Ehson qil': 'Ehson qil',
+          'Statistikalar': 'Statistikalar',
+          'Foydalanuvchilar': 'Foydalanuvchilar',
+          'Xabarlar': 'Xabarlar',
+          'Faol Chatlar': 'Faol Chatlar',
+          'Tez-tez so\'raladigan savollar': 'Tez-tez so\'raladigan savollar',
+          'Qanday qilib ehson qilaman?': 'Qanday qilib ehson qilaman?',
+          'Ehson qilish uchun \'Ehson qil\' tugmasini bosing va kerakli ma\'lumotlarni kiriting.':
+              'Ehson qilish uchun \'Ehson qil\' tugmasini bosing va kerakli ma\'lumotlarni kiriting.',
+          'Talab qanday qo\'yiladi?': 'Talab qanday qo\'yiladi?',
+          'Siz \'Talab qo‘yish\' bo‘limida o‘z talablaringizni kiritishingiz mumkin.':
+              'Siz \'Talab qo‘yish\' bo‘limida o‘z talablaringizni kiritishingiz mumkin.',
+          'Kampaniyalarga qanday qo‘shilaman?':
+              'Kampaniyalarga qanday qo‘shilaman?',
+          'Kampaniyalar bo‘limidan kerakli kampaniyani tanlab, qo‘shilishingiz mumkin.':
+              'Kampaniyalar bo‘limidan kerakli kampaniyani tanlab, qo‘shilishingiz mumkin.',
         },
         'ru_RU': {
           // Add Russian translations as needed
