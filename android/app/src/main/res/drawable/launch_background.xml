@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bo‘sh fon rangi (oq rang) -->
+    <item android:drawable="@android:color/white" />
+
+    <!-- Agar istasangiz, markazga logo qo‘shishingiz mumkin
     <item>
-        <bitmap android:gravity="fill" android:src="@drawable/background"/>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/your_logo" />
     </item>
-    <item>
-        <bitmap android:gravity="center" android:src="@drawable/splash"/>
-    </item>
+    -->
+
 </layer-list>
+
