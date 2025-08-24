@@ -1,48 +1,92 @@
+# Loyiha nomi
 name: e_ehson
-description: e-Ehson - social donation platform frontend (Material 3, GetX, mock)
+
+# Loyiha haqida qisqacha ma'lumot
+description: e-Ehson - ijtimoiy ehson platformasi frontend (Material 3, GetX, mock)
+
+# Loyiha faqat lokal ishlatiladi, nashr qilinmaydi
 publish_to: "none"
+
+# Loyiha versiyasi
 version: 0.1.0+1
 
+# SDK versiyasi chegarasi
 environment:
   sdk: ">=2.18.0 <4.0.0"
 
+# Asosiy bog‘liqliklar
 dependencies:
   flutter:
     sdk: flutter
+
+  # GetX - holatni boshqarish va navigatsiya uchun
   get: ^4.7.2
+
+  # Dio - HTTP so‘rovlar uchun
   dio: ^5.1.2
+
+  # Flutter lokalizatsiyasi uchun
   flutter_localizations:
     sdk: flutter
+
+  # Xalqaro formatlash (sana, vaqt, raqamlar) uchun
   intl: ^0.20.2
+
+  # SVG rasmlarni ko‘rsatish uchun
   flutter_svg: ^1.1.0
+
+  # QR kod generatsiyasi uchun
   qr_flutter: ^4.0.0
+
+  # Cupertino ikonkalari to‘plami
   cupertino_icons: ^1.0.2
+
+  # Progress indikatorlari uchun (foizli chiziqlar)
   percent_indicator: ^4.2.2
+
+  # Pastki navigatsiya paneli uchun
   convex_bottom_bar: ^3.2.0
+
+  # Rasm tanlash (galereya yoki kamera) uchun
   image_picker: ^1.1.1
+
+  # Mahalliy saqlash (sozlamalar uchun) uchun
   shared_preferences: ^2.2.0
+
+  # Konfetti animatsiyasi uchun
   confetti: ^0.7.0
+
+  # Internetdan rasmlarni keshlash uchun
   cached_network_image: ^3.2.3
-  flutter_slidable: ^0.6.0
-  url_launcher: ^6.1.7 
+
+  # Slayderli ro‘yxatlar uchun
+  flutter_slidable: ^3.0.0
+
+  # URL ochish (YouTube, brauzer) uchun
+  url_launcher: ^6.1.7
+
+  # Provider - holatni boshqarish uchun (karta funksiyalari uchun ishlatilgan)
   provider: ^6.0.5
 
+# Ishlab chiqish uchun bog‘liqliklar
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # Kod sifatini tekshirish uchun
   flutter_lints: ^3.0.0
 
+# Flutter sozlamalari
 flutter:
+  # Material Design ishlatiladi
   uses-material-design: true
 
-# Splash sozlamasi – rasm ishlatilmaydi, shuning uchun olib tashladik
-# Agar rasm ishlatadigan bo'lsang, quyidagi sozlamani qo'yishing mumkin:
-# flutter_native_splash:
-#   color: "#ffffff"
-#   image: assets/images/app_icon.png
-#   android: true
+  # Aktivlar (rasmlar, shriftlar va boshqalar)
+  assets:
+    - assets/images/app_icon.png  # Ilova ikonkasi uchun rasm
 
-# App icon sozlamasi – faqat Android uchun
+# App ikonkasi sozlamalari
 flutter_launcher_icons:
   image_path: "assets/images/app_icon.png"
   android: true
+  ios: true  # iOS uchun ikonka qo‘shildi (agar kerak bo‘lsa)
